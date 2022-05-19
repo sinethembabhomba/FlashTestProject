@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTesting", "UnitTesting", "{6BD7C3C4-C327-48A0-93C1-0DE9A188AF43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{F6F93454-C35D-4150-8F64-B6C8B73E118F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{703C9E05-AE25-403D-9856-4A79B0735E7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BL", "BL", "{80AF4A4D-2C98-47A5-964F-B19DAA541E53}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sensitivewords_API", "Sensitivewords_API\Sensitivewords_API.csproj", "{09BD5575-2CC6-45DD-B98A-11DA2D7546F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sensitivewords_Repository", "Sensitivewords_Repository\Sensitivewords_Repository.csproj", "{7310FA7C-68A3-423D-832B-075C929DDD2C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sensitivewords_Business", "Sensitivewords_Business\Sensitivewords_Business.csproj", "{573D5705-8DD0-48CB-A0C9-3E52D402CA63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensitiveWordsUnitTests", "SensitiveWordsUnitTests\SensitiveWordsUnitTests.csproj", "{85B91954-F58C-4378-9F60-E7440558B58A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09BD5575-2CC6-45DD-B98A-11DA2D7546F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09BD5575-2CC6-45DD-B98A-11DA2D7546F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09BD5575-2CC6-45DD-B98A-11DA2D7546F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09BD5575-2CC6-45DD-B98A-11DA2D7546F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7310FA7C-68A3-423D-832B-075C929DDD2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7310FA7C-68A3-423D-832B-075C929DDD2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7310FA7C-68A3-423D-832B-075C929DDD2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7310FA7C-68A3-423D-832B-075C929DDD2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{573D5705-8DD0-48CB-A0C9-3E52D402CA63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{573D5705-8DD0-48CB-A0C9-3E52D402CA63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{573D5705-8DD0-48CB-A0C9-3E52D402CA63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{573D5705-8DD0-48CB-A0C9-3E52D402CA63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85B91954-F58C-4378-9F60-E7440558B58A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85B91954-F58C-4378-9F60-E7440558B58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85B91954-F58C-4378-9F60-E7440558B58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85B91954-F58C-4378-9F60-E7440558B58A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{09BD5575-2CC6-45DD-B98A-11DA2D7546F1} = {703C9E05-AE25-403D-9856-4A79B0735E7B}
+		{7310FA7C-68A3-423D-832B-075C929DDD2C} = {F6F93454-C35D-4150-8F64-B6C8B73E118F}
+		{573D5705-8DD0-48CB-A0C9-3E52D402CA63} = {80AF4A4D-2C98-47A5-964F-B19DAA541E53}
+		{85B91954-F58C-4378-9F60-E7440558B58A} = {6BD7C3C4-C327-48A0-93C1-0DE9A188AF43}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A058C1EE-66A0-433E-9E8C-D6D165BB44B0}
+	EndGlobalSection
+EndGlobal

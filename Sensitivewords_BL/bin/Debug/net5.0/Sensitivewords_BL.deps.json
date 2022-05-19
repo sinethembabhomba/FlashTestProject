@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Sensitivewords_BL/1.0.0": {
+        "runtime": {
+          "Sensitivewords_BL.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Sensitivewords_BL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
