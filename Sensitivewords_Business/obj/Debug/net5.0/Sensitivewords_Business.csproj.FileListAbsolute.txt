@@ -10,15 +10,3 @@ C:\Users\sbhomba\source\repos\Sensitivewords\Sensitivewords_Business\obj\Debug\n
 C:\Users\sbhomba\source\repos\Sensitivewords\Sensitivewords_Business\obj\Debug\net5.0\refint\Sensitivewords_Business.dll
 C:\Users\sbhomba\source\repos\Sensitivewords\Sensitivewords_Business\obj\Debug\net5.0\Sensitivewords_Business.pdb
 C:\Users\sbhomba\source\repos\Sensitivewords\Sensitivewords_Business\obj\Debug\net5.0\ref\Sensitivewords_Business.dll
-C:\Users\sbhomba\Documents\Asekho\Test\FlashTestProject\Sensitivewords_Business\bin\Debug\net5.0\Sensitivewords_Business.deps.json
-C:\Users\sbhomba\Documents\Asekho\Test\FlashTestProject\Sensitivewords_Business\bin\Debug\net5.0\Sensitivewords_Business.dll
-C:\Users\sbhomba\Documents\Asekho\Test\FlashTestProject\Sensitivewords_Business\bin\Debug\net5.0\Sensitivewords_Business.pdb
-C:\Users\sbhomba\Documents\Asekho\Test\FlashTestProject\Sensitivewords_Business\obj\Debug\net5.0\Sensitivewords_Business.csproj.AssemblyReference.cache
-C:\Users\sbhomba\Documents\Asekho\Test\FlashTestProject\Sensitivewords_Business\obj\Debug\net5.0\Sensitivewords_Business.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\sbhomba\Documents\Asekho\Test\FlashTestProject\Sensitivewords_Business\obj\Debug\net5.0\Sensitivewords_Business.AssemblyInfoInputs.cache
-C:\Users\sbhomba\Documents\Asekho\Test\FlashTestProject\Sensitivewords_Business\obj\Debug\net5.0\Sensitivewords_Business.AssemblyInfo.cs
-C:\Users\sbhomba\Documents\Asekho\Test\FlashTestProject\Sensitivewords_Business\obj\Debug\net5.0\Sensitivewords_Business.csproj.CoreCompileInputs.cache
-C:\Users\sbhomba\Documents\Asekho\Test\FlashTestProject\Sensitivewords_Business\obj\Debug\net5.0\Sensitivewords_Business.dll
-C:\Users\sbhomba\Documents\Asekho\Test\FlashTestProject\Sensitivewords_Business\obj\Debug\net5.0\refint\Sensitivewords_Business.dll
-C:\Users\sbhomba\Documents\Asekho\Test\FlashTestProject\Sensitivewords_Business\obj\Debug\net5.0\Sensitivewords_Business.pdb
-C:\Users\sbhomba\Documents\Asekho\Test\FlashTestProject\Sensitivewords_Business\obj\Debug\net5.0\ref\Sensitivewords_Business.dll
