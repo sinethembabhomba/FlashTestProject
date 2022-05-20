@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Sensitivewords_Business.Entities;
+
 namespace Sensitivewords_Repository.Data.Config
 {
     public class NewWordEntityConfiguration : IEntityTypeConfiguration<Newwords>
