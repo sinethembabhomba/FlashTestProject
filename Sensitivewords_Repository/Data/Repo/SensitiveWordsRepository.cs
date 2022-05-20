@@ -15,13 +15,15 @@ namespace Sensitivewords_Repository.Data.Repo
         {
             _storeContext = sensitiveWordsContext;
         }
+
         public async Task<int> AddWord(Word name)
         {
             try
             {
-                var newWord = new Newwords() { Name = name.Name };
-                _storeContext.Newwords.Add(newWord);
+                var isWordExist = await _storeContext.Words.FirstOrDefaultAsync(w => w.Name == name.Name);
+                if (isWordExist != null) return 0;
 
+                _storeContext.Words.Add(name);
                 return await _storeContext.SaveChangesAsync();
             }
             catch (Exception ex)
@@ -31,7 +33,7 @@ namespace Sensitivewords_Repository.Data.Repo
                 return 0;
             }
         }
-        public async Task<IReadOnlyList<Word>> GetAllWord()
+        public async Task<List<Word>> GetAllWord()
         {
             try
             {
@@ -72,10 +74,10 @@ namespace Sensitivewords_Repository.Data.Repo
         {
             try
             {
-                var word = await _storeContext.Newwords.FirstOrDefaultAsync(x=> x.Name == name);
+                var word = await _storeContext.Words.FirstOrDefaultAsync(x=> x.Name == name);
 
                 //Delete that post
-                var results = _storeContext.Remove(word);
+                var results =  _storeContext.Remove(word);
 
                 //Commit the transaction
                  await _storeContext.SaveChangesAsync();
@@ -94,8 +96,8 @@ namespace Sensitivewords_Repository.Data.Repo
         {
             try
             {
-                var word = await _storeContext.Newwords.FindAsync(id);
-                word.Name = name.Name;
+                  var word = await _storeContext.Words.FindAsync(id);
+                  word.Name = name.Name;
                  _storeContext.Update(word);
 
                 var result = await _storeContext.SaveChangesAsync();

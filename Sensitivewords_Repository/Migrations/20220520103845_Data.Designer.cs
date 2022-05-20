@@ -9,8 +9,8 @@ using Sensitivewords_Repository.Data.Context;
 namespace Sensitivewords_Repository.Migrations
 {
     [DbContext(typeof(SensitiveWordsContext))]
-    [Migration("20220518114542_MyFirstMigration")]
-    partial class MyFirstMigration
+    [Migration("20220520103845_Data")]
+    partial class Data
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,23 +19,6 @@ namespace Sensitivewords_Repository.Migrations
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
-
-            modelBuilder.Entity("Sensitivewords_Business.Entities.Newwords", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)")
-                        .HasColumnName("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("NewWords");
-                });
 
             modelBuilder.Entity("Sensitivewords_Business.Entities.Word", b =>
                 {

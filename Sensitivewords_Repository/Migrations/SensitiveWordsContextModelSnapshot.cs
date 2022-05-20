@@ -18,23 +18,6 @@ namespace Sensitivewords_Repository.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("Sensitivewords_Business.Entities.Newwords", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)")
-                        .HasColumnName("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("NewWords");
-                });
-
             modelBuilder.Entity("Sensitivewords_Business.Entities.Word", b =>
                 {
                     b.Property<int>("Id")

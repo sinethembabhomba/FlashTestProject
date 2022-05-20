@@ -10,7 +10,7 @@ namespace Sensitivewords_Business.Contracts
         Task<bool> RemoveWord(string name);
         Task<bool> UpdateWord(int id, Word name);
         Task<Word> GetWord(string name);
-        Task<IReadOnlyList<Word>> GetAllWord();
+        Task<List<Word>> GetAllWord();
         Task<bool> IsWordSensitive(string word);
     }
 }

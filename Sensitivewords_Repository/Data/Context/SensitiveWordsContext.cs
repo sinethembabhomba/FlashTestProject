@@ -14,10 +14,7 @@ namespace Sensitivewords_Repository.Data.Context
         {
 
         }
-
         public DbSet<Word> Words { get; set; }
-        public DbSet<Newwords> Newwords { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

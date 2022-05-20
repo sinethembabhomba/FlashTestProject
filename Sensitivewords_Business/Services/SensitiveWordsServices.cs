@@ -16,7 +16,7 @@ namespace Sensitivewords_Business.Services
         {
             return await _sensitiveWordsRepo.AddWord(name);
         }
-        public async Task<IReadOnlyList<Word>> GetAllWord()
+        public async Task<List<Word>> GetAllWord()
         {
             return await _sensitiveWordsRepo.GetAllWord();
         }

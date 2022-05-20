@@ -7,6 +7,8 @@ using Sensitivewords_Business.Contracts;
 using Sensitivewords_Business.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Sensitivewords_API.Controllers
@@ -24,18 +26,18 @@ namespace Sensitivewords_API.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("{word}")]
+        [HttpGet("getwordbykeyword/{word}")]
         public async Task<ActionResult<WordDto>> GetWordByKeyWord(string word)
         {
             if(word == null)
-                return NotFound();
+                return NotFound(new ApiResponse(400, "word not found"));
 
             var results = await _sensitiveWordsServices.GetWord(word);
             var mapedResult = _mapper.Map<Word,WordDto>(results);
             return Ok(mapedResult);
         }
 
-        [HttpGet("getwordslist")]
+        [HttpGet("getwords")]
         public async Task<ActionResult<IReadOnlyList<WordDto>>> ReadWordList()
         {
             var results = await _sensitiveWordsServices.GetAllWord();
@@ -48,64 +50,40 @@ namespace Sensitivewords_API.Controllers
             if(name.Name == null)
                 return BadRequest(new ApiResponse(400, "Name field is required"));
 
-            if ( await _sensitiveWordsServices.IsWordSensitive(name.Name))
-            {
-                var message = SensitiveWordLookUp.StarOutWord(name.Name);
-                return BadRequest(new ApiResponse(400, message));
-            }
-            else
-            {
-                var wordresult = _mapper.Map<WordDto, Word>(name);
 
-                return Ok(await _sensitiveWordsServices.AddWord(wordresult));
-                
-            }
+                var wordresult = _mapper.Map<WordDto, Word>(name);
+               var results = await _sensitiveWordsServices.AddWord(wordresult);
+
+                if (results == 0) return BadRequest(new ApiResponse(400, "Name Already Exist"));
+
+                return Ok(new ApiResponse(200,"Added succesfully"));
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateWordD(int id, WordDto wordDto)
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> Update(int id, WordDto wordDto)
         {
             if (wordDto == null)
-                return NotFound();
+                return BadRequest(new ApiResponse(400, "Word is required"));
 
-
-
-            if (await _sensitiveWordsServices.IsWordSensitive(wordDto.Name))
-            {
-                var message = SensitiveWordLookUp.StarOutWord(wordDto.Name);
-                return BadRequest(new ApiResponse(400, message));
-            }
-
-            else
-            {
                 var wordresult = _mapper.Map<WordDto, Word>(wordDto);
-
                 return Ok(await _sensitiveWordsServices.UpdateWord(id,wordresult));
-
-            }
         }
 
         [HttpPost]
-        [Route("DeleteWordDto")]
-        public async Task<IActionResult> DeleteWordDtot(string word)
+        [Route("delete")]
+        public async Task<IActionResult> Delete(string word)
         {
            
             if (word == null)
             {
-                return BadRequest();
+                return BadRequest(new ApiResponse(400, "Word is required"));
             }
 
             try
             {
-                if (await _sensitiveWordsServices.IsWordSensitive(word))
-                {
-                    var message = SensitiveWordLookUp.StarOutWord(word);
-                    return BadRequest(new ApiResponse(400, message));
-                }
-
                 if (!await _sensitiveWordsServices.RemoveWord(word))
                 {
-                    return NotFound();
+                    return NotFound(new ApiResponse(400, "Word not found"));
                 }
                 return Ok();
             }
@@ -115,5 +93,40 @@ namespace Sensitivewords_API.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpPost("sendmessage")]
+        public async Task<IActionResult> SendMessage(string message)
+        {
+            var results = await _sensitiveWordsServices.GetAllWord();
+
+            //Only select name from a list object
+            var words = results.Select(x => x.Name).ToList();
+
+            //Split messange into an array so that you can itarate through it and comparing each word on the sentance with 
+            var splittedSentMessege = message.Split(" ");
+
+            //String builder to append words after star out
+            var output = new StringBuilder();
+
+            var tempList = new List<string>();
+
+            foreach (var messageword in splittedSentMessege)
+            {
+                foreach (var word in words)
+                {
+                    if (word.ToLower() == messageword.ToLower())
+                    {
+                        var staredWord = SensitiveWordLookUp.StarOutWord(messageword);
+                        output.Append(staredWord + " ");
+                        tempList.Add(messageword);
+                    }
+                }
+                //check the words that are not stared out are present in list and if they not present, add them to the list.
+                if (!tempList.Contains(messageword))
+                    output.Append(messageword + " ");
+            }
+            return Ok(new ApiResponse(200,output.ToString()));
+        }
+
     }
 }

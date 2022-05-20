@@ -4,22 +4,17 @@ namespace Sensitivewords_API.Helper
 {
     public static class SensitiveWordLookUp
     {
-        public static string StarOutWord(string word)
-        {
-            var length = word.Length;
-            var masked = new StringBuilder();
-            for (var i = 0; i < length; i++)
+     
+            public static string StarOutWord(string word)
             {
-                if(word[i] == '*')
+                var staredWord = new StringBuilder();
+                for (var x = 0; x < word.Length; x++)
                 {
-                    return masked.ToString() + " * FROM sensitiveWords";
+                staredWord.Append("*");
                 }
-
-                masked.Append("*");
+                return staredWord.ToString();
             }
-
-            return masked.ToString() + " * FROM sensitiveWords";
-        }
+        
 
     }
 }
